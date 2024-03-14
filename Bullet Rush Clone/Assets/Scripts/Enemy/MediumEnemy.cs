@@ -11,8 +11,7 @@ public class MediumEnemy : EnemyManager,IDamageable
         _mediumHealth = enemyData.enemyHealth;
         
     }
-  
-
+    
     public void TakeDamage()
     {
         //damage here.

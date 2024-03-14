@@ -11,6 +11,9 @@ public class PlayerMovement : MonoBehaviour
     private float _horizontalInput,_verticalInput;
     [SerializeField] private float _playerSpeed;
     private Vector3 _direction;
+    private Quaternion targetRotation;
+    [SerializeField] private float _rotationSpeed;
+    
     private void FixedUpdate()
     {
         _horizontalInput = _joystick.Horizontal;
@@ -22,7 +25,13 @@ public class PlayerMovement : MonoBehaviour
         {
             transform.rotation = Quaternion.LookRotation(_rigidbody.velocity);
         }
+        transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, Time.deltaTime * _rotationSpeed);
         
+    }
+    public void SetTargetRotation(Vector3 targetPosition)
+    {
+        Vector3 direction = (targetPosition - transform.position).normalized;
+        targetRotation = Quaternion.LookRotation(direction);
     }
     
 }

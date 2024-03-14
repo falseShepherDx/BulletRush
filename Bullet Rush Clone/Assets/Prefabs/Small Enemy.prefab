@@ -119,7 +119,7 @@ GameObject:
   - component: {fileID: 7095302137291200895}
   - component: {fileID: 1258788468991716708}
   - component: {fileID: 8130817741537920904}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Small Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
