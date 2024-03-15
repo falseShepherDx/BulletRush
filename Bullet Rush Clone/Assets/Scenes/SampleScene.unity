@@ -399,7 +399,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &224072640
 Transform:
   m_ObjectHideFlags: 0
@@ -766,7 +766,7 @@ Light:
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 2
+    m_Type: 1
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -1217,7 +1217,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1080888684
 Transform:
   m_ObjectHideFlags: 0
@@ -1777,7 +1777,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f4b489116bfe04b4ab79faa7f70e8667, type: 2}
+  - {fileID: 2100000, guid: e0b3618f9c4005d43bc267142eb54a3a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1933,7 +1933,7 @@ MonoBehaviour:
   leftHand: {fileID: 1256712698}
   rightHand: {fileID: 1320526597}
   shootingRange: 25
-  fireRate: 0.2
+  fireRate: 0.08
 --- !u!4 &1965406121 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5745351071608435218, guid: 8804f751ae28af54f82ddf310914a9fb, type: 3}
@@ -1983,7 +1983,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28e503767970ab8419107e7183f68509, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  amounToPool: 30
+  amounToPool: 40
   bulletPool: {fileID: 1972035816}
   _bulletPrefab: {fileID: 5335451499295630409, guid: 979358aaf70b76140ba1e96a67a9c8a2, type: 3}
 --- !u!1 &1987922923
@@ -2388,7 +2388,11 @@ PrefabInstance:
       objectReference: {fileID: 792040684}
     - target: {fileID: 8377206567939949898, guid: 345462bb9fcfb5e4398f9b324e12d3fe, type: 3}
       propertyPath: _playerSpeed
-      value: 250
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 8377206567939949898, guid: 345462bb9fcfb5e4398f9b324e12d3fe, type: 3}
+      propertyPath: _rotationSpeed
+      value: 30
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

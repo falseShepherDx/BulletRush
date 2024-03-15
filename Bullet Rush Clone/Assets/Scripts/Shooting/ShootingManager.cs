@@ -11,14 +11,25 @@ public class ShootingManager : MonoBehaviour
     public float shootingRange = 10f;
     public float fireRate = 0.5f;
     private float nextFireTime = 0f;
+    private bool shootLeft = true;
+    
 
     void Update()
     {
         if (Time.time > nextFireTime)
         {
-            Collider[] enemies = Physics.OverlapSphere(transform.position, shootingRange, LayerMask.GetMask("Enemy"));
+            Collider[] colliders = Physics.OverlapSphere(transform.position, shootingRange, LayerMask.GetMask("Enemy"));
+            List<Collider> enemies = new List<Collider>();
+            
+            foreach (Collider collider in colliders)
+            {
+                if (collider.gameObject.activeInHierarchy)
+                {
+                    enemies.Add(collider);
+                }
+            }
 
-            if (enemies.Length >= 2)
+            if (colliders.Length >= 2)
             {
                 Collider closestEnemy1 = null;
                 Collider closestEnemy2 = null;
@@ -41,17 +52,31 @@ public class ShootingManager : MonoBehaviour
                         closestDistance2 = distance;
                     }
                 }
-                ShootBullet(leftHand, closestEnemy1.transform.position);
-                ShootBullet(rightHand, closestEnemy2.transform.position);
+
+                if (shootLeft)
+                {
+                    ShootBullet(leftHand, closestEnemy1.transform.position);
+                }
+                else
+                {
+                    ShootBullet(rightHand, closestEnemy2.transform.position);
+                }
+                shootLeft = !shootLeft; 
             }
-            else if (enemies.Length == 1)
+            else if (colliders.Length == 1)
             {
-                ShootBullet(leftHand, enemies[0].transform.position);
-                ShootBullet(rightHand, enemies[0].transform.position);
+                if (shootLeft)
+                {
+                    ShootBullet(leftHand, enemies[0].transform.position);
+                }
+                else
+                {
+                    ShootBullet(rightHand, enemies[0].transform.position);
+                }
+                shootLeft = !shootLeft;
             }
             nextFireTime = Time.time + fireRate;
         }
-        
     }
 
     void ShootBullet(Transform hand, Vector3 targetPosition)
@@ -69,8 +94,3 @@ public class ShootingManager : MonoBehaviour
         }
     }
 }
-
-
-
-
-

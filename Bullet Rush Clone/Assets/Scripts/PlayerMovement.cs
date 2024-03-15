@@ -25,7 +25,8 @@ public class PlayerMovement : MonoBehaviour
         {
             transform.rotation = Quaternion.LookRotation(_rigidbody.velocity);
         }
-        transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, Time.deltaTime * _rotationSpeed);
+        transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * _rotationSpeed);
+        
         
     }
     public void SetTargetRotation(Vector3 targetPosition)
