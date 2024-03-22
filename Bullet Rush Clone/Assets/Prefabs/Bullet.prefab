@@ -245,7 +245,7 @@ MonoBehaviour:
   _bulletTrail: {fileID: 8156730971576826531}
   _bulletRb: {fileID: 1488920641586799104}
   _bulletSpeed: 100
-  _bulletLifetime: 2
+  _bulletLifetime: 1.75
 --- !u!54 &1488920641586799104
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: SmallEnemy
   m_EditorClassIdentifier: 
   enemyMaterial: {fileID: 0}
-  enemyHealth: 10
+  enemyHealth: 5

@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: MediumEnemy
   m_EditorClassIdentifier: 
   enemyMaterial: {fileID: 0}
-  enemyHealth: 20
+  enemyHealth: 10
